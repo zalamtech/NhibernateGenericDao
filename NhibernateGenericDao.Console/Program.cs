@@ -1,5 +1,27 @@
-﻿using System;
+﻿#region copyright
+// ------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Zalamtech SARL">
+//	Copyright 2014.
+// </copyright>
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// <author>Abdoul DIALLO</author>
+// <date>2014-8-28 23:21</date>
+// ------------------------------------------------------------------------
+#endregion
+
 using Castle.Windsor;
+using Castle.Windsor.Installer;
 using Com.Googlecode.Genericdao.Console.Entities;
 using Com.Googlecode.Genericdao.Console.Repositories;
 using Com.Googlecode.Genericdao.Search;
@@ -12,56 +34,12 @@ namespace Com.Googlecode.Genericdao.Console
 
         static void Main()
         {
-            //_container = new WindsorContainer();
-            //_container.Install(FromAssembly.This());
+            _container = new WindsorContainer();
+            _container.Install(FromAssembly.This());
 
-            //TestSearchPerson();
-            //TestBasicTypes();
-            TestParams();
-            TestParams(1);
-            TestParams(1,2,3,4);
+            TestSearchPerson();
+            
             System.Console.ReadKey();
-        }
-
-        private static void TestParams(params int[] ints)
-        {
-            if (ints == null)
-            {
-                System.Console.WriteLine("Params is null");
-                return;
-            }
-
-            if (ints.Length == 0)
-            {
-                System.Console.WriteLine("Params are empty");
-                return;
-            }
-
-            foreach (var i in ints)
-            {
-                System.Console.WriteLine("Param : " + i);
-            }
-        }
-
-        private static void TestBasicTypes()
-        {
-            const double d = 12.2;
-            const float f = 13.1f;
-            const long l = 123L;
-            const int i = 123;
-            const string s = "abc";
-
-            System.Console.WriteLine(d.GetType().IsClass ? "double is Class" : "double is not Class");
-
-            System.Console.WriteLine(f.GetType().IsClass ? "float is Class" : "float is not Class");
-
-            System.Console.WriteLine(l.GetType().IsClass ? "long is Class" : "long is not Class");
-
-            System.Console.WriteLine(i.GetType().IsClass ? "int is Class" : "int is not Class");
-
-            System.Console.WriteLine(s.GetType().IsClass ? "string is Class" : "string is not Class");
-
-            System.Console.WriteLine("double code = " + Type.GetTypeCode(typeof(double)) + ", Double code = " + TypeCode.Double);
         }
 
         private static void TestSearchPerson()
@@ -71,13 +49,13 @@ namespace Com.Googlecode.Genericdao.Console
             var search = new Search.Search();
             search.SetPage(0);
             search.SetMaxResults(10);
-            //var nameFilter = Filter.Equal("City.Name", "Lille");
-
-            search.SetSorts(new[] {new Sort(false, "City.Name", true)});
+            
+            var nameFilter = Filter.Equal("City.Name", "Lille");
             var notesFilter = Filter.Equal("Notes", "sdfsdfqsef");
-            //var filter = Filter.Or(nameFilter, notesFilter);
+            var filter = Filter.Or(nameFilter, notesFilter);
 
-            //search.SetFilters(new[] { nameFilter });
+            search.SetFilters(new[] { filter });
+            search.SetSorts(new[] { new Sort(false, "City.Name", true) });
 
             var personList = personDao.Search<Person, int>(search);
 

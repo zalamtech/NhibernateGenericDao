@@ -87,6 +87,9 @@
     <Compile Include="Repositories\IPhoneDao.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\NhibernateGenericDao.Search.licenseheader">
+      <Link>NhibernateGenericDao.Search.licenseheader</Link>
+    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
