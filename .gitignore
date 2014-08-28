@@ -1,0 +1,12 @@
+/obj
+/packages
+/*/bin
+/*/obj
+/*/Properties/PublishProfiles
+/*/App_Data
+/*/*.csproj.user
+*.log*
+*.suo
+*.Cache
+/TestResults
+/*.user

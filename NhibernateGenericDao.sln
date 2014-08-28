@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateGenericDao.Search", "NhibernateGenericDao.Search\NhibernateGenericDao.Search.csproj", "{BE42B4A1-66BD-4CF1-8D3D-F5F585C99857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0C9583DE-4004-4FCB-8F29-BEED739B0D45}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateGenericDao.Search.Test", "NhibernateGenericDao.Search.Test\NhibernateGenericDao.Search.Test.csproj", "{45280D06-ABB0-429A-8D28-97FB85C7ABC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateGenericDao.Console", "NhibernateGenericDao.Console\NhibernateGenericDao.Console.csproj", "{99738314-A62D-489B-B2E0-FB8D83B7CB42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateGenericDao.Dao", "NhibernateGenericDao.Dao\NhibernateGenericDao.Dao.csproj", "{10C7FF60-ECDC-49B3-A3BE-FEEFB145B6B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE42B4A1-66BD-4CF1-8D3D-F5F585C99857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE42B4A1-66BD-4CF1-8D3D-F5F585C99857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE42B4A1-66BD-4CF1-8D3D-F5F585C99857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE42B4A1-66BD-4CF1-8D3D-F5F585C99857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45280D06-ABB0-429A-8D28-97FB85C7ABC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45280D06-ABB0-429A-8D28-97FB85C7ABC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45280D06-ABB0-429A-8D28-97FB85C7ABC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45280D06-ABB0-429A-8D28-97FB85C7ABC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99738314-A62D-489B-B2E0-FB8D83B7CB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99738314-A62D-489B-B2E0-FB8D83B7CB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99738314-A62D-489B-B2E0-FB8D83B7CB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99738314-A62D-489B-B2E0-FB8D83B7CB42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C7FF60-ECDC-49B3-A3BE-FEEFB145B6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C7FF60-ECDC-49B3-A3BE-FEEFB145B6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C7FF60-ECDC-49B3-A3BE-FEEFB145B6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C7FF60-ECDC-49B3-A3BE-FEEFB145B6B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
