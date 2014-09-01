@@ -24,7 +24,6 @@ extensions: .cs .cpp .h
 
 extensions: .aspx .ascx
 <%-- 
-------------------------------------------------------------------------
 <copyright file="%FileName%" company="Zalamtech SARL">
 	Copyright 2014.
 </copyright>
@@ -42,7 +41,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 <author>%UserName%</author>
 <date>%CurrentYear%-%CurrentMonth%-%CurrentDay% %CurrentTime%</date>
-------------------------------------------------------------------------
 --%>
 
 extensions: .vb
@@ -69,7 +67,6 @@ extensions: .vb
 #endregion
 extensions: .html .cshtml .xml .config .xsd
 <!-- 
-------------------------------------------------------------------------
 <copyright file="%FileName%" company="Zalamtech SARL">
 	Copyright 2014.
 </copyright>
@@ -87,5 +84,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 <author>%UserName%</author>
 <date>%CurrentYear%-%CurrentMonth%-%CurrentDay% %CurrentTime%</date>
-------------------------------------------------------------------------
 -->

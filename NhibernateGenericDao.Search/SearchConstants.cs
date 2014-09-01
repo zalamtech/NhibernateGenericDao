@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // <author>Abdoul DIALLO</author>
-// <date>2014-8-28 23:21</date>
+// <date>2014-9-1 18:18</date>
 // ------------------------------------------------------------------------
 #endregion
 namespace Com.Googlecode.Genericdao.Search

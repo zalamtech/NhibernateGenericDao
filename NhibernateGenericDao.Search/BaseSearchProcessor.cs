@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // <author>Abdoul DIALLO</author>
-// <date>2014-8-28 23:21</date>
+// <date>2014-9-1 18:18</date>
 // ------------------------------------------------------------------------
 #endregion
 using System;
@@ -74,7 +74,7 @@ namespace Com.Googlecode.Genericdao.Search
 	     * specified as named parameters ":pX", where X is the index of the
 	     * parameter value in paramList.
 	     */
-        public String GenerateQL(Type entityClass, ISearch search, IList<object> paramList)
+        public string GenerateQL(Type entityClass, ISearch search, IList<object> paramList)
         {
             if (entityClass == null)
                 throw new NullReferenceException("The entity class for a search cannot be null");
@@ -292,7 +292,7 @@ namespace Com.Googlecode.Genericdao.Search
         /**
 	     * Apply the fetch list to the alias tree in the search context.
 	     */
-        protected void ApplyFetches(SearchContext ctx, IList<String> fetches, IList<Field> fields)
+        protected void ApplyFetches(SearchContext ctx, IList<string> fetches, IList<Field> fields)
         {
             if (fetches == null) return;
             // apply fetches
@@ -520,9 +520,9 @@ namespace Com.Googlecode.Genericdao.Search
                 case Operator.OP_LESS_OR_EQUAL:
                     return GetPathRef(ctx, property) + " <= " + Param(ctx, value);
                 case Operator.OP_LIKE:
-                    return GetPathRef(ctx, property) + " like " + Param(ctx, value.ToString());
+                    return GetPathRef(ctx, property) + " like " + Param(ctx, value);
                 case Operator.OP_ILIKE:
-                    return "lower(" + GetPathRef(ctx, property) + ") like lower(" + Param(ctx, value.ToString()) + ")";
+                    return "lower(" + GetPathRef(ctx, property) + ") like lower(" + Param(ctx, value) + ")";
                 case Operator.OP_AND:
                 case Operator.OP_OR:
                     if (!(value is IList))
@@ -901,6 +901,9 @@ namespace Com.Googlecode.Genericdao.Search
          */
         protected string Param(SearchContext ctx, object value)
         {
+            if (value == null)
+                return "null";
+
             if (value.GetType().IsClass && Type.GetTypeCode(value.GetType()) != TypeCode.String)
             {
                 return value.GetType().Name;

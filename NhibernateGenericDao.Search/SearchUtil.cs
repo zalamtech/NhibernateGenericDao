@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // <author>Abdoul DIALLO</author>
-// <date>2014-8-28 23:21</date>
+// <date>2014-9-1 18:18</date>
 // ------------------------------------------------------------------------
 #endregion
 using System.Collections;
@@ -773,7 +773,7 @@ namespace Com.Googlecode.Genericdao.Search
 	     * properties.
 	     */
 	    public static IMutableSearch ShallowCopy(ISearch source) {
-		    return ShallowCopy(source, new Genericdao.Search.Search());
+		    return ShallowCopy(source, new Search());
 	    }
 
 	    /**
@@ -811,7 +811,7 @@ namespace Com.Googlecode.Genericdao.Search
 	     * collections are not duplicated; they still point to the same objects.
 	     */
 	    public static IMutableSearch Copy(ISearch source) {
-		    return Copy(source, new Genericdao.Search.Search());
+		    return Copy(source, new Search());
 	    }
 
         /**
@@ -942,7 +942,13 @@ namespace Com.Googlecode.Genericdao.Search
 		    var i = 0;
 		    foreach (var item in list) {
 			    var result = visitor.Visit(item);
-			    if (!result.Equals(item) || (removeNulls && result == null)) {
+                if(result == null)
+                {
+                    if (copy != null) 
+                        copy.Insert(i, result);
+                }
+                else if (!result.Equals(item) || (removeNulls && result == null)) 
+                {
 				    if (copy == null) {
 					    copy = new List<T>(list.Count);
 					    copy.AddRange(list);
@@ -957,10 +963,12 @@ namespace Com.Googlecode.Genericdao.Search
 
 	        if (!removeNulls) return copy;
 
-	        for (var j = copy.Count - 1; j >= 0; j--) {
+	        for (var j = copy.Count - 1; j >= 0; j--) 
+            {
 	            if (copy.ElementAt(j) == null)
 	                copy.RemoveAt(j);
 	        }
+
 	        return copy;
 	    }
 

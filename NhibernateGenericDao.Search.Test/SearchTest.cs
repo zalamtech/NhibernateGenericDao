@@ -16,7 +16,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // <author>Abdoul DIALLO</author>
-// <date>2014-8-28 23:20</date>
+// <date>2014-9-1 18:18</date>
 // ------------------------------------------------------------------------
 #endregion
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -29,7 +29,7 @@ namespace Com.Googlecode.Genericdao.Search.Test
         [TestMethod]
         public void TestToString()
         {
-            Search s1;
+            var s1 = new Search();
             System.Diagnostics.Debug.WriteLine(s1);
 
             var s2 = new Search();

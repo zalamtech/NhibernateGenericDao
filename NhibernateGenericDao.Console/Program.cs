@@ -16,10 +16,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 // <author>Abdoul DIALLO</author>
-// <date>2014-8-28 23:21</date>
+// <date>2014-9-1 18:17</date>
 // ------------------------------------------------------------------------
 #endregion
-
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Com.Googlecode.Genericdao.Console.Entities;
@@ -50,8 +49,8 @@ namespace Com.Googlecode.Genericdao.Console
             search.SetPage(0);
             search.SetMaxResults(10);
             
-            var nameFilter = Filter.Equal("City.Name", "Lille");
-            var notesFilter = Filter.Equal("Notes", "sdfsdfqsef");
+            var nameFilter = Filter.Ilike("City.Name", "Par%");
+            var notesFilter = Filter.Ilike("Notes", "");
             var filter = Filter.Or(nameFilter, notesFilter);
 
             search.SetFilters(new[] { filter });
