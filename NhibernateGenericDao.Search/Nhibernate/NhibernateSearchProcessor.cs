@@ -121,7 +121,7 @@ namespace Com.Googlecode.Genericdao.Search.Nhibernate
             var query = session.CreateQuery(hql);
             AddParams(query, paramList);
 
-            return query.UniqueResult<int>();
+            return Convert.ToInt32(query.UniqueResult<long>());
         }
 
         /**

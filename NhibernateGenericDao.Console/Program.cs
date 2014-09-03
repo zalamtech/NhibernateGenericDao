@@ -49,16 +49,16 @@ namespace Com.Googlecode.Genericdao.Console
             search.SetPage(0);
             search.SetMaxResults(10);
             
-            var nameFilter = Filter.Ilike("City.Name", "Par%");
-            var notesFilter = Filter.Ilike("Notes", "");
-            var filter = Filter.Or(nameFilter, notesFilter);
+            //var nameFilter = Filter.Ilike("City.Name", "Par%");
+            //var notesFilter = Filter.Ilike("Notes", "");
+            //var filter = Filter.Or(nameFilter, notesFilter);
 
-            search.SetFilters(new[] { filter });
+            //search.SetFilters(new[] { filter });
             search.SetSorts(new[] { new Sort(false, "City.Name", true) });
 
-            var personList = personDao.Search<Person, int>(search);
+            var personList = personDao.SearchAndCount<Person, int>(search);
 
-            foreach (var person in personList)
+            foreach (var person in personList.Result)
             {
                 System.Console.WriteLine("Person " + person.Name + ", " + person.City.Name);
             }
