@@ -103,7 +103,7 @@ namespace Com.Googlecode.Genericdao.Dao
 
         public void Remove(params TEntity[] entities)
         {
-            _deleteEntity(entities);
+            _deleteEntities(entities);
         }
 
         public bool RemoveById(TId id)
