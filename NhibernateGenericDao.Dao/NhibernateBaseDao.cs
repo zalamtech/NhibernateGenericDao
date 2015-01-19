@@ -25,6 +25,7 @@ using System.Linq;
 using System.Text;
 using Castle.Core.Logging;
 using Com.Googlecode.Genericdao.Dao.Entity;
+using Com.Googlecode.Genericdao.Dao.Unitofwork;
 using Com.Googlecode.Genericdao.Search;
 using Com.Googlecode.Genericdao.Search.Nhibernate;
 using NHibernate;
@@ -58,8 +59,8 @@ namespace Com.Googlecode.Genericdao.Dao
          */
         protected ISession GetSession()
         {
-            //return NhibernateUnitOfWork.Current.Session;
-            return _sessionFactory.GetCurrentSession();
+            return NhibernateUnitOfWork.Current.Session;
+            //return _sessionFactory.GetCurrentSession();
         }
 
         /**
