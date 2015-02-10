@@ -28,9 +28,9 @@
             <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
             <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="" />
         </frameworkAssemblies>
-		<files>
-			<file src="bin\Release\NhibernateGenericDao.Dao.dll" target="lib\net40\NhibernateGenericDao.Dao.dll" />
-			<file src="bin\Release\NhibernateGenericDao.Search.dll" target="lib\net40\NhibernateGenericDao.Search.dll" />
-		</files>
     </metadata>
+	<files>
+		<file src="bin\Release\NhibernateGenericDao.Dao.dll" target="lib\net40\NhibernateGenericDao.Dao.dll" />
+		<file src="bin\Release\NhibernateGenericDao.Search.dll" target="lib\net40\NhibernateGenericDao.Search.dll" />
+	</files>
 </package>
