@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>NhibernateGenericDao</id>
+        <version>1.0.5</version>
+        <authors>Abdoul DIALLO</authors>
+        <owners>Abdoul DIALLO</owners>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <projectUrl>https://github.com/zalamtech/NhibernateGenericDao</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Transacribed from JAVA version on https://code.google.com/p/hibernate-generic-dao/</description>
+        <summary>Generic DAO Implementation for NHibernate</summary>
+        <releaseNotes>Add async operations</releaseNotes>
+        <copyright>Apache License Version 2.0, 2004</copyright>
+        <language>en-US</language>
+        <tags>nhibernate, dao, search, criteria, persistence, generic</tags>
+        <dependencies>
+            <dependency id="NHibernate" version="4.0.0.4000" />
+            <dependency id="Castle.Windsor-log4net" version="3.3.0" />
+            <dependency id="Castle.Core" version="3.3.0" />
+        </dependencies>
+		<frameworkAssemblies>
+            <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="" />
+            <frameworkAssembly assemblyName="System" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Data.DataSetExtensions" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="" />
+        </frameworkAssemblies>
+		<files>
+			<file src="bin\Release\NhibernateGenericDao.Dao.dll" target="lib\net40\NhibernateGenericDao.Dao.dll" />
+			<file src="bin\Release\NhibernateGenericDao.Search.dll" target="lib\net40\NhibernateGenericDao.Search.dll" />
+		</files>
+    </metadata>
+</package>
